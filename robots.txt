@@ -1,0 +1,8 @@
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Allow: /
+
+Sitemap: https://e9digital.com/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK

@@ -1,0 +1,5 @@
+@media screen and (min-width: 1024px) {
+    .nav-main .nav__sub-menu a {
+        font-size: 2.3rem !important;
+    }
+}
