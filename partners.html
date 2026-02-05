@@ -1546,310 +1546,7 @@
                                     method="POST">
                                     <input type="hidden" name="access_key"
                                         value="a5b10f85-5046-49bb-805e-465fb9bc719b">
-                                    <input type="hidden" name="                                    <!-- Replace the existing script before </body> -->
-                                    
-                                    <script>
-                                    (function () {
-                                        'use strict';
-                                    
-                                        var SUCCESS_URL = 'https://tech-plum-rho.vercel.app/success.html';
-                                        var FORM_API_URL = 'https://api.web3forms.com/submit';
-                                    
-                                        function submitForm(form) {
-                                            var btn = form.querySelector('button[type="submit"]');
-                                            var originalText = btn ? btn.textContent : 'Submit Form';
-                                    
-                                            if (btn) {
-                                                btn.disabled = true;
-                                                btn.textContent = 'Submitting...';
-                                            }
-                                    
-                                            var formData = new FormData(form);
-                                    
-                                            fetch(FORM_API_URL, {
-                                                method: 'POST',
-                                                body: formData
-                                            })
-                                            .then(function(response) {
-                                                return response.json();
-                                            })
-                                            .then(function(data) {
-                                                console.log('Response:', data);
-                                                if (data.success) {
-                                                    window.location.href = SUCCESS_URL;
-                                                } else {
-                                                    alert('Form submission failed: ' + (data.message || 'Please try again.'));
-                                                    if (btn) {
-                                                        btn.disabled = false;
-                                                        btn.textContent = originalText;
-                                                    }
-                                                }
-                                            })
-                                            .catch(function(error) {
-                                                console.error('Error:', error);
-                                                alert('Network error. Please try again.');
-                                                if (btn) {
-                                                    btn.disabled = false;
-                                                    btn.textContent = originalText;
-                                                }
-                                            });
-                                        }
-                                    
-                                        function initPartnerForm() {
-                                            var form = document.getElementById('partner-form');
-                                            if (!form || form.getAttribute('data-bound') === 'true') return;
-                                    
-                                            form.setAttribute('data-bound', 'true');
-                                    
-                                            form.addEventListener('submit', function (e) {
-                                                e.preventDefault();
-                                                e.stopPropagation();
-                                                submitForm(form);
-                                            }, true);
-                                    
-                                            console.log('Partner form ready');
-                                        }
-                                    
-                                        function initPopupForm() {
-                                            var form = document.getElementById('popup-project-form');
-                                            if (!form || form.getAttribute('data-bound') === 'true') return;
-                                    
-                                            form.setAttribute('data-bound', 'true');
-                                    
-                                            form.addEventListener('submit', function (e) {
-                                                e.preventDefault();
-                                                e.stopPropagation();
-                                                e.stopImmediatePropagation();
-                                                submitForm(form);
-                                                return false;
-                                            }, true);
-                                    
-                                            console.log('Popup form ready');
-                                        }
-                                    
-                                        if (document.readyState === 'loading') {
-                                            document.addEventListener('DOMContentLoaded', function () {
-                                                initPartnerForm();
-                                                initPopupForm();
-                                            });
-                                        } else {
-                                            initPartnerForm();
-                                            initPopupForm();
-                                        }
-                                    
-                                        setInterval(function () {
-                                            var popup = document.getElementById('pum-9506');
-                                            if (popup && popup.classList.contains('pum-open')) {
-                                                initPopupForm();
-                                            }
-                                        }, 300);
-                                    
-                                    })();
-                                    </script>
-                                    </body>
-                                    </html>                                    <!-- Replace the existing script before </body> -->
-                                    
-                                    <script>
-                                    (function () {
-                                        'use strict';
-                                    
-                                        var SUCCESS_URL = 'https://tech-plum-rho.vercel.app/success.html';
-                                        var FORM_API_URL = 'https://api.web3forms.com/submit';
-                                    
-                                        function submitForm(form) {
-                                            var btn = form.querySelector('button[type="submit"]');
-                                            var originalText = btn ? btn.textContent : 'Submit Form';
-                                    
-                                            if (btn) {
-                                                btn.disabled = true;
-                                                btn.textContent = 'Submitting...';
-                                            }
-                                    
-                                            var formData = new FormData(form);
-                                    
-                                            fetch(FORM_API_URL, {
-                                                method: 'POST',
-                                                body: formData
-                                            })
-                                            .then(function(response) {
-                                                return response.json();
-                                            })
-                                            .then(function(data) {
-                                                console.log('Response:', data);
-                                                if (data.success) {
-                                                    window.location.href = SUCCESS_URL;
-                                                } else {
-                                                    alert('Form submission failed: ' + (data.message || 'Please try again.'));
-                                                    if (btn) {
-                                                        btn.disabled = false;
-                                                        btn.textContent = originalText;
-                                                    }
-                                                }
-                                            })
-                                            .catch(function(error) {
-                                                console.error('Error:', error);
-                                                alert('Network error. Please try again.');
-                                                if (btn) {
-                                                    btn.disabled = false;
-                                                    btn.textContent = originalText;
-                                                }
-                                            });
-                                        }
-                                    
-                                        function initPartnerForm() {
-                                            var form = document.getElementById('partner-form');
-                                            if (!form || form.getAttribute('data-bound') === 'true') return;
-                                    
-                                            form.setAttribute('data-bound', 'true');
-                                    
-                                            form.addEventListener('submit', function (e) {
-                                                e.preventDefault();
-                                                e.stopPropagation();
-                                                submitForm(form);
-                                            }, true);
-                                    
-                                            console.log('Partner form ready');
-                                        }
-                                    
-                                        function initPopupForm() {
-                                            var form = document.getElementById('popup-project-form');
-                                            if (!form || form.getAttribute('data-bound') === 'true') return;
-                                    
-                                            form.setAttribute('data-bound', 'true');
-                                    
-                                            form.addEventListener('submit', function (e) {
-                                                e.preventDefault();
-                                                e.stopPropagation();
-                                                e.stopImmediatePropagation();
-                                                submitForm(form);
-                                                return false;
-                                            }, true);
-                                    
-                                            console.log('Popup form ready');
-                                        }
-                                    
-                                        if (document.readyState === 'loading') {
-                                            document.addEventListener('DOMContentLoaded', function () {
-                                                initPartnerForm();
-                                                initPopupForm();
-                                            });
-                                        } else {
-                                            initPartnerForm();
-                                            initPopupForm();
-                                        }
-                                    
-                                        setInterval(function () {
-                                            var popup = document.getElementById('pum-9506');
-                                            if (popup && popup.classList.contains('pum-open')) {
-                                                initPopupForm();
-                                            }
-                                        }, 300);
-                                    
-                                    })();
-                                    </script>
-                                    </body>
-                                    </html>                                    <!-- Replace the existing script before </body> -->
-                                    
-                                    <script>
-                                    (function () {
-                                        'use strict';
-                                    
-                                        var SUCCESS_URL = 'https://tech-plum-rho.vercel.app/success.html';
-                                        var FORM_API_URL = 'https://api.web3forms.com/submit';
-                                    
-                                        function submitForm(form) {
-                                            var btn = form.querySelector('button[type="submit"]');
-                                            var originalText = btn ? btn.textContent : 'Submit Form';
-                                    
-                                            if (btn) {
-                                                btn.disabled = true;
-                                                btn.textContent = 'Submitting...';
-                                            }
-                                    
-                                            var formData = new FormData(form);
-                                    
-                                            fetch(FORM_API_URL, {
-                                                method: 'POST',
-                                                body: formData
-                                            })
-                                            .then(function(response) {
-                                                return response.json();
-                                            })
-                                            .then(function(data) {
-                                                console.log('Response:', data);
-                                                if (data.success) {
-                                                    window.location.href = SUCCESS_URL;
-                                                } else {
-                                                    alert('Form submission failed: ' + (data.message || 'Please try again.'));
-                                                    if (btn) {
-                                                        btn.disabled = false;
-                                                        btn.textContent = originalText;
-                                                    }
-                                                }
-                                            })
-                                            .catch(function(error) {
-                                                console.error('Error:', error);
-                                                alert('Network error. Please try again.');
-                                                if (btn) {
-                                                    btn.disabled = false;
-                                                    btn.textContent = originalText;
-                                                }
-                                            });
-                                        }
-                                    
-                                        function initPartnerForm() {
-                                            var form = document.getElementById('partner-form');
-                                            if (!form || form.getAttribute('data-bound') === 'true') return;
-                                    
-                                            form.setAttribute('data-bound', 'true');
-                                    
-                                            form.addEventListener('submit', function (e) {
-                                                e.preventDefault();
-                                                e.stopPropagation();
-                                                submitForm(form);
-                                            }, true);
-                                    
-                                            console.log('Partner form ready');
-                                        }
-                                    
-                                        function initPopupForm() {
-                                            var form = document.getElementById('popup-project-form');
-                                            if (!form || form.getAttribute('data-bound') === 'true') return;
-                                    
-                                            form.setAttribute('data-bound', 'true');
-                                    
-                                            form.addEventListener('submit', function (e) {
-                                                e.preventDefault();
-                                                e.stopPropagation();
-                                                e.stopImmediatePropagation();
-                                                submitForm(form);
-                                                return false;
-                                            }, true);
-                                    
-                                            console.log('Popup form ready');
-                                        }
-                                    
-                                        if (document.readyState === 'loading') {
-                                            document.addEventListener('DOMContentLoaded', function () {
-                                                initPartnerForm();
-                                                initPopupForm();
-                                            });
-                                        } else {
-                                            initPartnerForm();
-                                            initPopupForm();
-                                        }
-                                    
-                                        setInterval(function () {
-                                            var popup = document.getElementById('pum-9506');
-                                            if (popup && popup.classList.contains('pum-open')) {
-                                                initPopupForm();
-                                            }
-                                        }, 300);
-                                    
-                                    })();
-                                    </script>
-                                    </body>
-                                    </html>subject" value="New Partner Form Submission!">
+                                    <input type="hidden" name="_subject" value="New Partner Form Submission!">
                                     <input type="hidden" name="_captcha" value="false">
 
                                     <div class="form-field">
@@ -2868,19 +2565,15 @@ if('save'== data.type){
 // ...existing code...
 
 <!-- Replace the script before </body> -->
-<!-- Replace the existing script before </body> -->
-
 <script>
 (function () {
     'use strict';
 
-    var SUCCESS_URL = 'https://tech-plum-rho.vercel.app/success.html';
+    var SUCCESS_URL = 'https://tech-zeta-teal.vercel.app/success.html';
     var FORM_API_URL = 'https://api.web3forms.com/submit';
 
     function submitForm(form) {
         var btn = form.querySelector('button[type="submit"]');
-        var originalText = btn ? btn.textContent : 'Submit Form';
-
         if (btn) {
             btn.disabled = true;
             btn.textContent = 'Submitting...';
@@ -2896,14 +2589,13 @@ if('save'== data.type){
             return response.json();
         })
         .then(function(data) {
-            console.log('Response:', data);
             if (data.success) {
                 window.location.href = SUCCESS_URL;
             } else {
                 alert('Form submission failed: ' + (data.message || 'Please try again.'));
                 if (btn) {
                     btn.disabled = false;
-                    btn.textContent = originalText;
+                    btn.textContent = 'Submit Form';
                 }
             }
         })
@@ -2912,7 +2604,7 @@ if('save'== data.type){
             alert('Network error. Please try again.');
             if (btn) {
                 btn.disabled = false;
-                btn.textContent = originalText;
+                btn.textContent = 'Submit Form';
             }
         });
     }
@@ -2925,11 +2617,10 @@ if('save'== data.type){
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            e.stopPropagation();
             submitForm(form);
-        }, true);
+        });
 
-        console.log('Partner form ready');
+        console.log('Partner form handler attached');
     }
 
     function initPopupForm() {
@@ -2943,10 +2634,9 @@ if('save'== data.type){
             e.stopPropagation();
             e.stopImmediatePropagation();
             submitForm(form);
-            return false;
         }, true);
 
-        console.log('Popup form ready');
+        console.log('Popup form handler attached');
     }
 
     if (document.readyState === 'loading') {
