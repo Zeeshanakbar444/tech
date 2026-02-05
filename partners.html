@@ -2559,15 +2559,14 @@ if('save'== data.type){
 
 <!-- Replace the existing script before </body> -->
 
+<!-- Replace the existing script before </body> -->
+
 <script>
 (function () {
     'use strict';
 
     var SUCCESS_URL = 'https://tech-plum-rho.vercel.app/success.html';
-    
-    // Web3Forms endpoint (no rate limit)
     var FORM_API_URL = 'https://api.web3forms.com/submit';
-    var ACCESS_KEY = 'a5b10f85-5046-49bb-805e-465fb9bc719b'; // Web3Forms se mila hua key yahan daalo
 
     /* ===============================
        PARTNER FORM
@@ -2588,7 +2587,7 @@ if('save'== data.type){
             }
 
             var formData = new FormData(form);
-            formData.append('access_key', ACCESS_KEY);
+            // access_key already in form - no need to append
 
             var xhr = new XMLHttpRequest();
             xhr.open('POST', FORM_API_URL, true);
@@ -2596,10 +2595,13 @@ if('save'== data.type){
 
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
+                    console.log('Status:', xhr.status);
+                    console.log('Response:', xhr.responseText);
+                    
                     if (xhr.status >= 200 && xhr.status < 300) {
                         window.location.href = SUCCESS_URL;
                     } else {
-                        alert('Form submission failed. Please try again.');
+                        alert('Form submission failed. Status: ' + xhr.status + ' - ' + xhr.responseText);
                         if (btn) {
                             btn.disabled = false;
                             btn.textContent = 'Submit Form';
@@ -2644,7 +2646,7 @@ if('save'== data.type){
             }
 
             var formData = new FormData(form);
-            formData.append('access_key', ACCESS_KEY);
+            // access_key already in form - no need to append
 
             var xhr = new XMLHttpRequest();
             xhr.open('POST', FORM_API_URL, true);
@@ -2652,10 +2654,13 @@ if('save'== data.type){
 
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
+                    console.log('Status:', xhr.status);
+                    console.log('Response:', xhr.responseText);
+                    
                     if (xhr.status >= 200 && xhr.status < 300) {
                         window.location.href = SUCCESS_URL;
                     } else {
-                        alert('Form submission failed. Please try again.');
+                        alert('Form submission failed. Status: ' + xhr.status + ' - ' + xhr.responseText);
                         if (btn) {
                             btn.disabled = false;
                             btn.textContent = 'Submit Form';
@@ -2703,7 +2708,8 @@ if('save'== data.type){
 
 })();
 </script>
-
+</body>
+</html>
 
 
 
