@@ -1547,7 +1547,7 @@
                                     <input type="hidden" name="access_key"
                                         value="a5b10f85-5046-49bb-805e-465fb9bc719b">
                                     <input type="hidden" name="_subject" value="New Partner Form Submission!">
-                                    <input type="hidden" name="_captcha" value="false">
+                                    <!-- <input type="hidden" name="_captcha" value="false"> -->
 
                                     <div class="form-field">
                                         <label>Full Name *</label>
@@ -1885,7 +1885,7 @@
             <form id="popup-project-form"   class="popup-form" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="a5b10f85-5046-49bb-805e-465fb9bc719b">
                 <input type="hidden" name="_subject" value="New Form Submission!">
-                <input type="hidden" name="_captcha" value="false">
+                <!-- <input type="hidden" name="_captcha" value="false"> -->
                 <div class="form-field">
                     <label>Are you a client with a project for Us Tech Titans? *</label>
                     <select name="clientStatus" required>
@@ -2717,13 +2717,15 @@ if('save'== data.type){
 
 <!-- Replace the existing script before </body> -->
 
+<!-- Replace the existing script before </body> -->
+
 <script>
 (function () {
     'use strict';
 
     var FORM_API_URL = 'https://api.web3forms.com/submit';
 
-    // Show success message on same page (no redirect needed)
+    // Show success message on same page
     function showSuccessMessage() {
         document.body.innerHTML = `
             <div style="
@@ -2759,9 +2761,51 @@ if('save'== data.type){
         `;
     }
 
-    /* ===============================
-       PARTNER FORM
-    =============================== */
+    // Submit form via AJAX
+    function submitForm(form) {
+        var btn = form.querySelector('button[type="submit"]');
+        var originalText = btn ? btn.textContent : 'Submit Form';
+
+        if (btn) {
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+        }
+
+        var formData = new FormData(form);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', FORM_API_URL, true);
+        xhr.setRequestHeader('Accept', 'application/json');
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                console.log('Status:', xhr.status);
+                console.log('Response:', xhr.responseText);
+                
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    showSuccessMessage();
+                } else {
+                    alert('Form submission failed. Please try again.');
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.textContent = originalText;
+                    }
+                }
+            }
+        };
+
+        xhr.onerror = function () {
+            alert('Network error. Please try again.');
+            if (btn) {
+                btn.disabled = false;
+                btn.textContent = originalText;
+            }
+        };
+
+        xhr.send(formData);
+    }
+
+    // Partner Form
     function initPartnerForm() {
         var form = document.getElementById('partner-form');
         if (!form || form.getAttribute('data-bound') === 'true') return;
@@ -2770,50 +2814,14 @@ if('save'== data.type){
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            
-            var btn = form.querySelector('button[type="submit"]');
-            if (btn) {
-                btn.disabled = true;
-                btn.textContent = 'Submitting...';
-            }
+            e.stopPropagation();
+            submitForm(form);
+        }, true);
 
-            var formData = new FormData(form);
-
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', FORM_API_URL, true);
-            xhr.setRequestHeader('Accept', 'application/json');
-
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    if (xhr.status >= 200 && xhr.status < 300) {
-                        showSuccessMessage();
-                    } else {
-                        alert('Form submission failed. Please try again.');
-                        if (btn) {
-                            btn.disabled = false;
-                            btn.textContent = 'Submit Form';
-                        }
-                    }
-                }
-            };
-
-            xhr.onerror = function () {
-                alert('Network error. Please try again.');
-                if (btn) {
-                    btn.disabled = false;
-                    btn.textContent = 'Submit Form';
-                }
-            };
-
-            xhr.send(formData);
-        });
-
-        console.log('Partner form handler attached');
+        console.log('Partner form ready');
     }
 
-    /* ===============================
-       POPUP FORM
-    =============================== */
+    // Popup Form
     function initPopupForm() {
         var form = document.getElementById('popup-project-form');
         if (!form || form.getAttribute('data-bound') === 'true') return;
@@ -2825,50 +2833,14 @@ if('save'== data.type){
             e.preventDefault();
             e.stopPropagation();
             e.stopImmediatePropagation();
-            
-            var btn = form.querySelector('button[type="submit"]');
-            if (btn) {
-                btn.disabled = true;
-                btn.textContent = 'Submitting...';
-            }
-
-            var formData = new FormData(form);
-
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', FORM_API_URL, true);
-            xhr.setRequestHeader('Accept', 'application/json');
-
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    if (xhr.status >= 200 && xhr.status < 300) {
-                        showSuccessMessage();
-                    } else {
-                        alert('Form submission failed. Please try again.');
-                        if (btn) {
-                            btn.disabled = false;
-                            btn.textContent = 'Submit Form';
-                        }
-                    }
-                }
-            };
-
-            xhr.onerror = function () {
-                alert('Network error. Please try again.');
-                if (btn) {
-                    btn.disabled = false;
-                    btn.textContent = 'Submit Form';
-                }
-            };
-
-            xhr.send(formData);
+            submitForm(form);
+            return false;
         }, true);
 
-        console.log('Popup form handler attached');
+        console.log('Popup form ready');
     }
 
-    /* ===============================
-       INIT
-    =============================== */
+    // Initialize
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
             initPartnerForm();
@@ -2879,9 +2851,7 @@ if('save'== data.type){
         initPopupForm();
     }
 
-    /* ===============================
-       POPUP WATCHER
-    =============================== */
+    // Watch for popup
     setInterval(function () {
         var popup = document.getElementById('pum-9506');
         if (popup && popup.classList.contains('pum-open')) {
@@ -2891,6 +2861,7 @@ if('save'== data.type){
 
 })();
 </script>
+
 
 </body>
 </html>
