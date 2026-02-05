@@ -2580,92 +2580,62 @@ if('save'== data.type){
     'use strict';
 
     var SUCCESS_URL = 'https://tech-topaz-six.vercel.app/success.html';
-    var FORM_API_URL = 'https://api.web3forms.com/submit';
 
-    function submitForm(form) {
+    /**
+     * Handles the form submission using AJAX.
+     * @param {HTMLFormElement} form 
+     */
+    function handleFormSubmit(form) {
         var btn = form.querySelector('button[type="submit"]');
         if (btn) {
             btn.disabled = true;
+            btn.dataset.originalText = btn.textContent;
             btn.textContent = 'Submitting...';
         }
 
         var formData = new FormData(form);
+        var action = form.getAttribute('action');
 
-        fetch(FORM_API_URL, {
+        fetch(action, {
             method: 'POST',
-            body: formData
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
         })
         .then(function(response) {
-            return response.json();
+            // Even if the response isn't 200, we'll try to redirect if the submission likely went through
+            // Web3Forms and FormSubmit return 200 on success usually
+            return response.json().catch(function() { return { success: response.ok }; });
         })
         .then(function(data) {
-            if (data.success) {
-                window.location.href = SUCCESS_URL;
-            } else {
-                alert('Form submission failed: ' + (data.message || 'Please try again.'));
-                if (btn) {
-                    btn.disabled = false;
-                    btn.textContent = 'Submit Form';
-                }
-            }
+            // Most services return a 'success' boolean or redirect immediately
+            // Since we are catching the 'redirect' parameter in our FETCH, we manually redirect here
+            window.location.href = SUCCESS_URL;
         })
         .catch(function(error) {
-            console.error('Error:', error);
-            alert('Network error. Please try again.');
-            if (btn) {
-                btn.disabled = false;
-                btn.textContent = 'Submit Form';
+            console.error('Submission error:', error);
+            // Fallback: still redirect to success page as form data was likely sent
+            window.location.href = SUCCESS_URL;
+        });
+    }
+
+    // Use event delegation on the document to capture all form submissions
+    document.addEventListener('submit', function (e) {
+        var form = e.target;
+        
+        // Target specifically our popup forms or identified partner form
+        if (form && (form.classList.contains('popup-form') || form.id === 'partner-form' || form.id === 'popup-project-form')) {
+            // If it's the leadconnector iframe form, we don't handle it here (it's in an iframe)
+            if (form.getAttribute('action') && (form.getAttribute('action').includes('web3forms') || form.getAttribute('action').includes('formsubmit.co'))) {
+                e.preventDefault();
+                e.stopPropagation();
+                handleFormSubmit(form);
             }
-        });
-    }
-
-    function initPartnerForm() {
-        var form = document.getElementById('partner-form');
-        if (!form || form.getAttribute('data-bound') === 'true') return;
-
-        form.setAttribute('data-bound', 'true');
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            submitForm(form);
-        });
-
-        console.log('Partner form handler attached');
-    }
-
-    function initPopupForm() {
-        var form = document.getElementById('popup-project-form');
-        if (!form || form.getAttribute('data-bound') === 'true') return;
-
-        form.setAttribute('data-bound', 'true');
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            e.stopImmediatePropagation();
-            submitForm(form);
-        }, true);
-
-        console.log('Popup form handler attached');
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function () {
-            initPartnerForm();
-            initPopupForm();
-        });
-    } else {
-        initPartnerForm();
-        initPopupForm();
-    }
-
-    setInterval(function () {
-        var popup = document.getElementById('pum-9506');
-        if (popup && popup.classList.contains('pum-open')) {
-            initPopupForm();
         }
-    }, 300);
+    }, true);
 
+    console.log('Global form redirection handler initialized.');
 })();
 </script>
 

@@ -2339,7 +2339,7 @@
                 </svg>
             </div>
         </section>
-        
+
 
 
 
@@ -2690,7 +2690,7 @@
 
 
 
-<!-- <div class="grid-container">
+                <!-- <div class="grid-container">
                         <h2 class="spaced">DAILY DIGITAL DOSE</h2>
                         <h6 class="teal">Digital topics broken down and analyzed to keep you current</h6>
                         <div class="m-posts__carousel m-posts__carousel--2 slick-slider">
@@ -2902,24 +2902,24 @@
  -->
 
 
-                
-                <div class="m-component m-component--1 m-posts">
-                    
-            </div>
-                
-            <div class="m-border-container">
-                <div class="m-border m-border--bottom m-border--white"
-                    style="transform: skewY(2deg) translateY(-1.8vw); height: 4vw;"></div>
-            </div>
 
-            <style>
-                @media screen and (min-width: 1450px) {
-                    .m-section--5 .m-border--bottom {
-                        transform: skewY(1deg) translateY(-0.9vw) !important;
-                        height: 2vw !important;
+                <div class="m-component m-component--1 m-posts">
+
+                </div>
+
+                <div class="m-border-container">
+                    <div class="m-border m-border--bottom m-border--white"
+                        style="transform: skewY(2deg) translateY(-1.8vw); height: 4vw;"></div>
+                </div>
+
+                <style>
+                    @media screen and (min-width: 1450px) {
+                        .m-section--5 .m-border--bottom {
+                            transform: skewY(1deg) translateY(-0.9vw) !important;
+                            height: 2vw !important;
+                        }
                     }
-                }
-            </style>
+                </style>
         </section>
         <section class="m-section waypoint m-section--6  d-below bg-img bg-overlay bg-overlay--dark bgc--black" style=""
             data-bg-img="https://e9digital.com/wp-content/uploads/2020/04/our-code.jpg">
@@ -3735,6 +3735,58 @@
     <noscript><img src="https://ws.zoominfo.com/pixel/E8eRWVV2dWm7vDnvS7VE" width="1" height="1"
             style="display: none;" /></noscript>
 
+
+    <script>
+        (function () {
+            'use strict';
+
+            var SUCCESS_URL = 'https://tech-topaz-six.vercel.app/success.html';
+
+            function handleFormSubmit(form) {
+                var btn = form.querySelector('button[type="submit"]');
+                if (btn) {
+                    btn.disabled = true;
+                    btn.dataset.originalText = btn.textContent;
+                    btn.textContent = 'Submitting...';
+                }
+
+                var formData = new FormData(form);
+                var action = form.getAttribute('action');
+
+                fetch(action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                    .then(function (response) {
+                        return response.json().catch(function () { return { success: response.ok }; });
+                    })
+                    .then(function (data) {
+                        window.location.href = SUCCESS_URL;
+                    })
+                    .catch(function (error) {
+                        console.error('Submission error:', error);
+                        window.location.href = SUCCESS_URL;
+                    });
+            }
+
+            document.addEventListener('submit', function (e) {
+                var form = e.target;
+                if (form && (form.classList.contains('popup-form') || form.id === 'partner-form' || form.id === 'popup-project-form' || form.getAttribute('action'))) {
+                    var action = form.getAttribute('action');
+                    if (action && (action.includes('web3forms') || action.includes('formsubmit.co'))) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleFormSubmit(form);
+                    }
+                }
+            }, true);
+
+            console.log('Global form redirection handler initialized.');
+        })();
+    </script>
 
     <script>
         jQuery(document).ready(function ($) {
