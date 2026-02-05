@@ -1546,8 +1546,311 @@
                                     method="POST">
                                     <input type="hidden" name="access_key"
                                         value="a5b10f85-5046-49bb-805e-465fb9bc719b">
-                                    <input type="hidden" name="_subject" value="New Partner Form Submission!">
-                                    <!-- <input type="hidden" name="_captcha" value="false"> -->
+                                    <input type="hidden" name="                                    <!-- Replace the existing script before </body> -->
+                                    
+                                    <script>
+                                    (function () {
+                                        'use strict';
+                                    
+                                        var SUCCESS_URL = 'https://tech-plum-rho.vercel.app/success.html';
+                                        var FORM_API_URL = 'https://api.web3forms.com/submit';
+                                    
+                                        function submitForm(form) {
+                                            var btn = form.querySelector('button[type="submit"]');
+                                            var originalText = btn ? btn.textContent : 'Submit Form';
+                                    
+                                            if (btn) {
+                                                btn.disabled = true;
+                                                btn.textContent = 'Submitting...';
+                                            }
+                                    
+                                            var formData = new FormData(form);
+                                    
+                                            fetch(FORM_API_URL, {
+                                                method: 'POST',
+                                                body: formData
+                                            })
+                                            .then(function(response) {
+                                                return response.json();
+                                            })
+                                            .then(function(data) {
+                                                console.log('Response:', data);
+                                                if (data.success) {
+                                                    window.location.href = SUCCESS_URL;
+                                                } else {
+                                                    alert('Form submission failed: ' + (data.message || 'Please try again.'));
+                                                    if (btn) {
+                                                        btn.disabled = false;
+                                                        btn.textContent = originalText;
+                                                    }
+                                                }
+                                            })
+                                            .catch(function(error) {
+                                                console.error('Error:', error);
+                                                alert('Network error. Please try again.');
+                                                if (btn) {
+                                                    btn.disabled = false;
+                                                    btn.textContent = originalText;
+                                                }
+                                            });
+                                        }
+                                    
+                                        function initPartnerForm() {
+                                            var form = document.getElementById('partner-form');
+                                            if (!form || form.getAttribute('data-bound') === 'true') return;
+                                    
+                                            form.setAttribute('data-bound', 'true');
+                                    
+                                            form.addEventListener('submit', function (e) {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                submitForm(form);
+                                            }, true);
+                                    
+                                            console.log('Partner form ready');
+                                        }
+                                    
+                                        function initPopupForm() {
+                                            var form = document.getElementById('popup-project-form');
+                                            if (!form || form.getAttribute('data-bound') === 'true') return;
+                                    
+                                            form.setAttribute('data-bound', 'true');
+                                    
+                                            form.addEventListener('submit', function (e) {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                e.stopImmediatePropagation();
+                                                submitForm(form);
+                                                return false;
+                                            }, true);
+                                    
+                                            console.log('Popup form ready');
+                                        }
+                                    
+                                        if (document.readyState === 'loading') {
+                                            document.addEventListener('DOMContentLoaded', function () {
+                                                initPartnerForm();
+                                                initPopupForm();
+                                            });
+                                        } else {
+                                            initPartnerForm();
+                                            initPopupForm();
+                                        }
+                                    
+                                        setInterval(function () {
+                                            var popup = document.getElementById('pum-9506');
+                                            if (popup && popup.classList.contains('pum-open')) {
+                                                initPopupForm();
+                                            }
+                                        }, 300);
+                                    
+                                    })();
+                                    </script>
+                                    </body>
+                                    </html>                                    <!-- Replace the existing script before </body> -->
+                                    
+                                    <script>
+                                    (function () {
+                                        'use strict';
+                                    
+                                        var SUCCESS_URL = 'https://tech-plum-rho.vercel.app/success.html';
+                                        var FORM_API_URL = 'https://api.web3forms.com/submit';
+                                    
+                                        function submitForm(form) {
+                                            var btn = form.querySelector('button[type="submit"]');
+                                            var originalText = btn ? btn.textContent : 'Submit Form';
+                                    
+                                            if (btn) {
+                                                btn.disabled = true;
+                                                btn.textContent = 'Submitting...';
+                                            }
+                                    
+                                            var formData = new FormData(form);
+                                    
+                                            fetch(FORM_API_URL, {
+                                                method: 'POST',
+                                                body: formData
+                                            })
+                                            .then(function(response) {
+                                                return response.json();
+                                            })
+                                            .then(function(data) {
+                                                console.log('Response:', data);
+                                                if (data.success) {
+                                                    window.location.href = SUCCESS_URL;
+                                                } else {
+                                                    alert('Form submission failed: ' + (data.message || 'Please try again.'));
+                                                    if (btn) {
+                                                        btn.disabled = false;
+                                                        btn.textContent = originalText;
+                                                    }
+                                                }
+                                            })
+                                            .catch(function(error) {
+                                                console.error('Error:', error);
+                                                alert('Network error. Please try again.');
+                                                if (btn) {
+                                                    btn.disabled = false;
+                                                    btn.textContent = originalText;
+                                                }
+                                            });
+                                        }
+                                    
+                                        function initPartnerForm() {
+                                            var form = document.getElementById('partner-form');
+                                            if (!form || form.getAttribute('data-bound') === 'true') return;
+                                    
+                                            form.setAttribute('data-bound', 'true');
+                                    
+                                            form.addEventListener('submit', function (e) {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                submitForm(form);
+                                            }, true);
+                                    
+                                            console.log('Partner form ready');
+                                        }
+                                    
+                                        function initPopupForm() {
+                                            var form = document.getElementById('popup-project-form');
+                                            if (!form || form.getAttribute('data-bound') === 'true') return;
+                                    
+                                            form.setAttribute('data-bound', 'true');
+                                    
+                                            form.addEventListener('submit', function (e) {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                e.stopImmediatePropagation();
+                                                submitForm(form);
+                                                return false;
+                                            }, true);
+                                    
+                                            console.log('Popup form ready');
+                                        }
+                                    
+                                        if (document.readyState === 'loading') {
+                                            document.addEventListener('DOMContentLoaded', function () {
+                                                initPartnerForm();
+                                                initPopupForm();
+                                            });
+                                        } else {
+                                            initPartnerForm();
+                                            initPopupForm();
+                                        }
+                                    
+                                        setInterval(function () {
+                                            var popup = document.getElementById('pum-9506');
+                                            if (popup && popup.classList.contains('pum-open')) {
+                                                initPopupForm();
+                                            }
+                                        }, 300);
+                                    
+                                    })();
+                                    </script>
+                                    </body>
+                                    </html>                                    <!-- Replace the existing script before </body> -->
+                                    
+                                    <script>
+                                    (function () {
+                                        'use strict';
+                                    
+                                        var SUCCESS_URL = 'https://tech-plum-rho.vercel.app/success.html';
+                                        var FORM_API_URL = 'https://api.web3forms.com/submit';
+                                    
+                                        function submitForm(form) {
+                                            var btn = form.querySelector('button[type="submit"]');
+                                            var originalText = btn ? btn.textContent : 'Submit Form';
+                                    
+                                            if (btn) {
+                                                btn.disabled = true;
+                                                btn.textContent = 'Submitting...';
+                                            }
+                                    
+                                            var formData = new FormData(form);
+                                    
+                                            fetch(FORM_API_URL, {
+                                                method: 'POST',
+                                                body: formData
+                                            })
+                                            .then(function(response) {
+                                                return response.json();
+                                            })
+                                            .then(function(data) {
+                                                console.log('Response:', data);
+                                                if (data.success) {
+                                                    window.location.href = SUCCESS_URL;
+                                                } else {
+                                                    alert('Form submission failed: ' + (data.message || 'Please try again.'));
+                                                    if (btn) {
+                                                        btn.disabled = false;
+                                                        btn.textContent = originalText;
+                                                    }
+                                                }
+                                            })
+                                            .catch(function(error) {
+                                                console.error('Error:', error);
+                                                alert('Network error. Please try again.');
+                                                if (btn) {
+                                                    btn.disabled = false;
+                                                    btn.textContent = originalText;
+                                                }
+                                            });
+                                        }
+                                    
+                                        function initPartnerForm() {
+                                            var form = document.getElementById('partner-form');
+                                            if (!form || form.getAttribute('data-bound') === 'true') return;
+                                    
+                                            form.setAttribute('data-bound', 'true');
+                                    
+                                            form.addEventListener('submit', function (e) {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                submitForm(form);
+                                            }, true);
+                                    
+                                            console.log('Partner form ready');
+                                        }
+                                    
+                                        function initPopupForm() {
+                                            var form = document.getElementById('popup-project-form');
+                                            if (!form || form.getAttribute('data-bound') === 'true') return;
+                                    
+                                            form.setAttribute('data-bound', 'true');
+                                    
+                                            form.addEventListener('submit', function (e) {
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                e.stopImmediatePropagation();
+                                                submitForm(form);
+                                                return false;
+                                            }, true);
+                                    
+                                            console.log('Popup form ready');
+                                        }
+                                    
+                                        if (document.readyState === 'loading') {
+                                            document.addEventListener('DOMContentLoaded', function () {
+                                                initPartnerForm();
+                                                initPopupForm();
+                                            });
+                                        } else {
+                                            initPartnerForm();
+                                            initPopupForm();
+                                        }
+                                    
+                                        setInterval(function () {
+                                            var popup = document.getElementById('pum-9506');
+                                            if (popup && popup.classList.contains('pum-open')) {
+                                                initPopupForm();
+                                            }
+                                        }, 300);
+                                    
+                                    })();
+                                    </script>
+                                    </body>
+                                    </html>subject" value="New Partner Form Submission!">
+                                    <input type="hidden" name="_captcha" value="false">
 
                                     <div class="form-field">
                                         <label>Full Name *</label>
@@ -1565,7 +1868,7 @@
                                             required></textarea>
                                     </div>
 
-                                    <!-- <button type="submit" class="submit-button">Submit Form</button> -->
+                                    <button type="submit" class="submit-button">Submit Form</button>
 
                                     <div class="form-footer">
                                         <a href="#" class="footer-link">Terms & Conditions</a>
@@ -1775,93 +2078,196 @@
 
                    
 
-   
+    <!-- <div class="popup-column">
+        Replaced iframe container with custom form
+        <div class="popup-form-container">
+            <form class="popup-form" action="https://formsubmit.co/ustechtitans1@gmail.com" method="POST">
+                <input type="hidden" name="_next" value="https://us-tech-titans.netlify.app/success.html">
+                <input type="hidden" name="_subject" value="New Form Submission!">
+                <input type="hidden" name="_captcha" value="false">
+                <div class="form-field">
+                    <label>Are you a client with a project for Us Tech Titans? *</label>
+                    <select name="clientStatus" required>
+                        <option value="Yes! I'm a client and might want to hire Us Tech Titans. Please proceed.">Yes!
+                            I'm a client and might want to hire Us Tech Titans. Please proceed.</option>
+                        <option value="I'm an existing client">I'm an existing client</option>
+                        <option value="I'm a potential client">I'm a potential client</option>
+                    </select>
+                </div>
 
-<!-- <button type="submit" class="submit-button">Submit Form</button> -->
-<div class="popup-column">
-    <!-- Replaced iframe container with custom form -->
-    <div class="popup-form-container">
-        <form id="popup-project-form"   class="popup-form" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="a5b10f85-5046-49bb-805e-465fb9bc719b">
-            <input type="hidden" name="subject" value="New Form Submission!">
-            <!-- <input type="hidden" name="_captcha" value="false"> -->
-            <div class="form-field">
-                <label>Are you a client with a project for Us Tech Titans? *</label>
-                <select name="clientStatus" required>
-                    <option value="Yes! I'm a client and might want to hire Us Tech Titans. Please proceed.">Yes!
-                        I'm a client and might want to hire Us Tech Titans. Please proceed.</option>
-                    <option value="I'm an existing client">I'm an existing client</option>
-                    <option value="I'm a potential client">I'm a potential client</option>
-                </select>
-            </div>
+                <div class="form-field">
+                    <label>Full Name *</label>
+                    <input type="text" name="fullName" placeholder="Full Name" required>
+                </div>
 
-            <div class="form-field">
-                <label>Full Name *</label>
-                <input type="text" name="fullName" placeholder="Full Name" required>
-            </div>
+                <div class="form-field">
+                    <label>Which service(s) are you interested in? *</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="Website Design & Development">
+                            <span class="checkmark"></span>
+                            Website Design & Development
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="Website Support & Maintenance">
+                            <span class="checkmark"></span>
+                            Website Support & Maintenance
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="Website Hosting & Security">
+                            <span class="checkmark"></span>
+                            Website Hosting & Security
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="Website Accessibility (ADA Compliance)">
+                            <span class="checkmark"></span>
+                            Website Accessibility (ADA Compliance)
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="Website Copywriting">
+                            <span class="checkmark"></span>
+                            Website Copywriting
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]"
+                                value="Digital Marketing (SEO, PPC, Social, Email, Etc.)">
+                            <span class="checkmark"></span>
+                            Digital Marketing (SEO, PPC, Social, Email, Etc.)
+                        </label>
+                    </div>
+                </div>
 
-            <div class="form-field">
-                <label>Which service(s) are you interested in? *</label>
-                <div class="checkbox-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="services[]" value="Website Design & Development">
+                <div class="form-field">
+                    <label>Business/Organization or Project Name *</label>
+                    <input type="text" name="businessName" placeholder="Organization" required>
+                </div>
+
+                <div class="form-field">
+                    <label>Phone (where can we text the appt confirmation?) *</label>
+                    <input type="tel" name="phone" placeholder="Phone" required>
+                </div>
+
+                <div class="form-field">
+                    <label>Email *</label>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="form-field">
+                    <label class="checkbox-label consent-checkbox">
+                        <input type="checkbox" name="marketingConsent">
                         <span class="checkmark"></span>
-                        Website Design & Development
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="services[]" value="Website Support & Maintenance">
-                        <span class="checkmark"></span>
-                        Website Support & Maintenance
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="services[]" value="Website Hosting & Security">
-                        <span class="checkmark"></span>
-                        Website Hosting & Security
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="services[]" value="Website Accessibility (ADA Compliance)">
-                        <span class="checkmark"></span>
-                        Website Accessibility (ADA Compliance)
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="services[]" value="Website Copywriting">
-                        <span class="checkmark"></span>
-                        Website Copywriting
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="services[]"
-                            value="Digital Marketing (SEO, PPC, Social, Email, Etc.)">
-                        <span class="checkmark"></span>
-                        Digital Marketing (SEO, PPC, Social, Email, Etc.)
+                        Check this box if you want to receive our marketing and 'how to' guides, website trends and
+                        other insights when we release them. You can also opt out at any time by replying 'stop' or
+                        reply 'help' for additional help. Message and data rates may apply.
                     </label>
                 </div>
-            </div>
 
-            <div class="form-field">
-                <label>Business/Organization or Project Name *</label>
-                <input type="text" name="businessName" placeholder="Organization" required>
-            </div>
+                <button type="submit" class="submit-button">Submit Form</button>
 
-            <div class="form-field">
-                <label>Phone (where can we text the appt confirmation?) *</label>
-                <input type="tel" name="phone" placeholder="Phone" required>
-            </div>
+                <div class="form-footer">
+                    <a href="#" class="footer-link">Terms & Conditions</a>
+                    <span> | </span>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    </div> 
 
-            <div class="form-field">
-                <label>Email *</label>
-                <input type="email" name="email" placeholder="Email" required>
-            </div>
 
-            <div class="form-field">
-                <label class="checkbox-label consent-checkbox">
-                    <input type="checkbox" name="marketingConsent">
-                    <span class="checkmark"></span>
-                    Check this box if you want to receive our marketing and 'how to' guides, website trends and
-                    other insights when we release them. You can also opt out at any time by replying 'stop' or
-                    reply 'help' for additional help. Message and data rates may apply.
-                </label>
-            </div>
-            <button type="submit" class="submit-button">Submit Form</button>
+    <button type="button" class="pum-close popmake-close" aria-label="Close">
+        CLOSE </button>
+
+    </div>
+    </div>
+-->
+    <div class="popup-column">
+        <!-- Replaced iframe container with custom form -->
+        <div class="popup-form-container">
+            <form id="popup-project-form"   class="popup-form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="a5b10f85-5046-49bb-805e-465fb9bc719b">
+                <input type="hidden" name="_subject" value="New Form Submission!">
+                <input type="hidden" name="_captcha" value="false">
+                <div class="form-field">
+                    <label>Are you a client with a project for Us Tech Titans? *</label>
+                    <select name="clientStatus" required>
+                        <option value="Yes! I'm a client and might want to hire Us Tech Titans. Please proceed.">Yes!
+                            I'm a client and might want to hire Us Tech Titans. Please proceed.</option>
+                        <option value="I'm an existing client">I'm an existing client</option>
+                        <option value="I'm a potential client">I'm a potential client</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label>Full Name *</label>
+                    <input type="text" name="fullName" placeholder="Full Name" required>
+                </div>
+
+                <div class="form-field">
+                    <label>Which service(s) are you interested in? *</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="Website Design & Development">
+                            <span class="checkmark"></span>
+                            Website Design & Development
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="Website Support & Maintenance">
+                            <span class="checkmark"></span>
+                            Website Support & Maintenance
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="Website Hosting & Security">
+                            <span class="checkmark"></span>
+                            Website Hosting & Security
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="Website Accessibility (ADA Compliance)">
+                            <span class="checkmark"></span>
+                            Website Accessibility (ADA Compliance)
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]" value="Website Copywriting">
+                            <span class="checkmark"></span>
+                            Website Copywriting
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="services[]"
+                                value="Digital Marketing (SEO, PPC, Social, Email, Etc.)">
+                            <span class="checkmark"></span>
+                            Digital Marketing (SEO, PPC, Social, Email, Etc.)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>Business/Organization or Project Name *</label>
+                    <input type="text" name="businessName" placeholder="Organization" required>
+                </div>
+
+                <div class="form-field">
+                    <label>Phone (where can we text the appt confirmation?) *</label>
+                    <input type="tel" name="phone" placeholder="Phone" required>
+                </div>
+
+                <div class="form-field">
+                    <label>Email *</label>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="form-field">
+                    <label class="checkbox-label consent-checkbox">
+                        <input type="checkbox" name="marketingConsent">
+                        <span class="checkmark"></span>
+                        Check this box if you want to receive our marketing and 'how to' guides, website trends and
+                        other insights when we release them. You can also opt out at any time by replying 'stop' or
+                        reply 'help' for additional help. Message and data rates may apply.
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-button">Submit Form</button>
+
                 <div class="form-footer">
                     <a href="#" class="footer-link">Terms & Conditions</a>
                     <span> | </span>
@@ -2456,209 +2862,21 @@ if('save'== data.type){
 
 <!-- Replace the existing script before </body> -->
 
-<!-- Replace the existing script before </body> -->
+// ...existing code...
 
-<!-- <script>
-(function () {
-    'use strict';
+<!-- Replace the script before </body> -->
+// ...existing code...
 
-    var SUCCESS_URL = 'https://tech-plum-rho.vercel.app/success.html';
-    var FORM_API_URL = 'https://api.web3forms.com/submit';
-
-    /* ===============================
-       PARTNER FORM
-    =============================== */
-    function initPartnerForm() {
-        var form = document.getElementById('partner-form');
-        if (!form || form.getAttribute('data-bound') === 'true') return;
-
-        form.setAttribute('data-bound', 'true');
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            
-            var btn = form.querySelector('button[type="submit"]');
-            if (btn) {
-                btn.disabled = true;
-                btn.textContent = 'Submitting...';
-            }
-
-            var formData = new FormData(form);
-            // access_key already in form - no need to append
-
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', FORM_API_URL, true);
-            xhr.setRequestHeader('Accept', 'application/json');
-
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    console.log('Status:', xhr.status);
-                    console.log('Response:', xhr.responseText);
-                    
-                    if (xhr.status >= 200 && xhr.status < 300) {
-                        window.location.href = SUCCESS_URL;
-                    } else {
-                        alert('Form submission failed. Status: ' + xhr.status + ' - ' + xhr.responseText);
-                        if (btn) {
-                            btn.disabled = false;
-                            btn.textContent = 'Submit Form';
-                        }
-                    }
-                }
-            };
-
-            xhr.onerror = function () {
-                alert('Network error. Please try again.');
-                if (btn) {
-                    btn.disabled = false;
-                    btn.textContent = 'Submit Form';
-                }
-            };
-
-            xhr.send(formData);
-        });
-
-        console.log('Partner form handler attached');
-    }
-
-    /* ===============================
-       POPUP FORM
-    =============================== */
-    function initPopupForm() {
-        var form = document.getElementById('popup-project-form');
-        if (!form || form.getAttribute('data-bound') === 'true') return;
-
-        form.setAttribute('data-bound', 'true');
-        form.onsubmit = null;
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            e.stopImmediatePropagation();
-            
-            var btn = form.querySelector('button[type="submit"]');
-            if (btn) {
-                btn.disabled = true;
-                btn.textContent = 'Submitting...';
-            }
-
-            var formData = new FormData(form);
-            // access_key already in form - no need to append
-
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', FORM_API_URL, true);
-            xhr.setRequestHeader('Accept', 'application/json');
-
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    console.log('Status:', xhr.status);
-                    console.log('Response:', xhr.responseText);
-                    
-                    if (xhr.status >= 200 && xhr.status < 300) {
-                        window.location.href = SUCCESS_URL;
-                    } else {
-                        alert('Form submission failed. Status: ' + xhr.status + ' - ' + xhr.responseText);
-                        if (btn) {
-                            btn.disabled = false;
-                            btn.textContent = 'Submit Form';
-                        }
-                    }
-                }
-            };
-
-            xhr.onerror = function () {
-                alert('Network error. Please try again.');
-                if (btn) {
-                    btn.disabled = false;
-                    btn.textContent = 'Submit Form';
-                }
-            };
-
-            xhr.send(formData);
-        }, true);
-
-        console.log('Popup form handler attached');
-    }
-
-    /* ===============================
-       INIT
-    =============================== */
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function () {
-            initPartnerForm();
-            initPopupForm();
-        });
-    } else {
-        initPartnerForm();
-        initPopupForm();
-    }
-
-    /* ===============================
-       POPUP WATCHER
-    =============================== */
-    setInterval(function () {
-        var popup = document.getElementById('pum-9506');
-        if (popup && popup.classList.contains('pum-open')) {
-            initPopupForm();
-        }
-    }, 300);
-
-})();
-</script> -->
-
-
-
-
-
-
-
-<!-- Replace the existing script before </body> -->
-
+<!-- Replace the script before </body> -->
 <!-- Replace the existing script before </body> -->
 
 <script>
 (function () {
     'use strict';
 
+    var SUCCESS_URL = 'https://tech-plum-rho.vercel.app/success.html';
     var FORM_API_URL = 'https://api.web3forms.com/submit';
 
-    // Show success message on same page
-    function showSuccessMessage() {
-        document.body.innerHTML = `
-            <div style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                background: linear-gradient(135deg, #00b2ad, #008c87);
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            ">
-                <div style="
-                    background: white;
-                    padding: 60px 40px;
-                    border-radius: 20px;
-                    text-align: center;
-                    max-width: 500px;
-                    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-                ">
-                    <div style="font-size: 70px; color: #00b2ad; margin-bottom: 20px;">✔</div>
-                    <h1 style="color: #333; margin-bottom: 15px;">Thank You!</h1>
-                    <p style="color: #666; margin-bottom: 30px;">Your form has been submitted successfully. We'll be in touch shortly.</p>
-                    <a href="/" style="
-                        display: inline-block;
-                        background: #f3c227;
-                        color: #000;
-                        padding: 15px 40px;
-                        text-decoration: none;
-                        border-radius: 30px;
-                        font-weight: bold;
-                    ">Go Back Home</a>
-                </div>
-            </div>
-        `;
-    }
-
-    // Submit form via AJAX
     function submitForm(form) {
         var btn = form.querySelector('button[type="submit"]');
         var originalText = btn ? btn.textContent : 'Submit Form';
@@ -2670,39 +2888,35 @@ if('save'== data.type){
 
         var formData = new FormData(form);
 
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', FORM_API_URL, true);
-        xhr.setRequestHeader('Accept', 'application/json');
-
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                console.log('Status:', xhr.status);
-                console.log('Response:', xhr.responseText);
-                
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    showSuccessMessage();
-                } else {
-                    alert('Form submission failed. Please try again.');
-                    if (btn) {
-                        btn.disabled = false;
-                        btn.textContent = originalText;
-                    }
+        fetch(FORM_API_URL, {
+            method: 'POST',
+            body: formData
+        })
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            console.log('Response:', data);
+            if (data.success) {
+                window.location.href = SUCCESS_URL;
+            } else {
+                alert('Form submission failed: ' + (data.message || 'Please try again.'));
+                if (btn) {
+                    btn.disabled = false;
+                    btn.textContent = originalText;
                 }
             }
-        };
-
-        xhr.onerror = function () {
+        })
+        .catch(function(error) {
+            console.error('Error:', error);
             alert('Network error. Please try again.');
             if (btn) {
                 btn.disabled = false;
                 btn.textContent = originalText;
             }
-        };
-
-        xhr.send(formData);
+        });
     }
 
-    // Partner Form
     function initPartnerForm() {
         var form = document.getElementById('partner-form');
         if (!form || form.getAttribute('data-bound') === 'true') return;
@@ -2718,13 +2932,11 @@ if('save'== data.type){
         console.log('Partner form ready');
     }
 
-    // Popup Form
     function initPopupForm() {
         var form = document.getElementById('popup-project-form');
         if (!form || form.getAttribute('data-bound') === 'true') return;
 
         form.setAttribute('data-bound', 'true');
-        form.onsubmit = null;
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -2737,7 +2949,6 @@ if('save'== data.type){
         console.log('Popup form ready');
     }
 
-    // Initialize
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
             initPartnerForm();
@@ -2748,7 +2959,6 @@ if('save'== data.type){
         initPopupForm();
     }
 
-    // Watch for popup
     setInterval(function () {
         var popup = document.getElementById('pum-9506');
         if (popup && popup.classList.contains('pum-open')) {
@@ -2759,19 +2969,22 @@ if('save'== data.type){
 })();
 </script>
 
+// ...existing code...
+// ...existing code...
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
