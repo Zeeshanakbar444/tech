@@ -26,18 +26,26 @@
         height: 35px !important;
         width: auto !important;
         margin: 0 !important;
+        display: block !important;
     }
 
     /* Position the burger icon on the top right */
     .site-header__col--mobile {
         margin: 0 !important;
         width: auto !important;
-        display: block !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 100% !important;
     }
 
     .nav-mobile-toggle {
         margin: 0 !important;
-        padding: 10px !important;
+        padding: 5px !important;
+        display: block !important;
+        cursor: pointer !important;
+        height: auto !important;
+        width: auto !important;
     }
 
     /* Styling the burger icon to match the user's request (golden color) */
@@ -51,7 +59,34 @@
     /* Adjust hamburger box size if needed */
     .hamburger-box {
         width: 30px !important;
-        height: 20px !important;
+        height: 24px !important;
+        display: block !important;
+        position: relative !important;
+    }
+
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        width: 30px !important;
+        height: 2px !important;
+        background-color: #F3C227 !important;
+        position: absolute !important;
+        display: block !important;
+        content: '' !important;
+        transition: transform 0.15s ease !important;
+    }
+
+    .hamburger-inner {
+        top: 50% !important;
+        margin-top: -1px !important;
+    }
+
+    .hamburger-inner::before {
+        top: -8px !important;
+    }
+
+    .hamburger-inner::after {
+        bottom: -8px !important;
     }
 
     /* Ensure content doesn't get hidden under the fixed header */
