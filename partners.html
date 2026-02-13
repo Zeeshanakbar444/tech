@@ -772,6 +772,94 @@
                 border: 0;
             }
         }
+
+        @media screen and (max-width: 430px) {
+            .m-hero {
+                padding: 6rem 0 3rem !important;
+            }
+
+            .m-hero h1 {
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            .m-hero h6 {
+                font-size: 0.875rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+
+            .m-hero p {
+                font-size: 1rem !important;
+                line-height: 1.5 !important;
+            }
+
+            .full-width-hero {
+                background-position: center !important;
+                background-size: cover !important;
+            }
+
+            .site-header {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: flex-start !important;
+                padding: 10px 15px !important;
+                background-color: transparent !important;
+                /* Make transparent to see background if needed */
+                min-height: 40px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                z-index: 1001 !important;
+            }
+
+            .site-header__col--logo {
+                width: auto !important;
+                margin: 0 !important;
+                flex: 0 1 auto !important;
+            }
+
+            .site-header__col--mobile {
+                display: block !important;
+                width: auto !important;
+                margin: 0 !important;
+                flex: 0 0 auto !important;
+            }
+
+            .site-header__col--nav {
+                display: none !important;
+            }
+
+            .logo img {
+                max-width: 120px !important;
+                height: auto !important;
+                display: block !important;
+            }
+
+            .hamburger {
+                padding: 0 !important;
+                display: block !important;
+                margin: 0 !important;
+                line-height: 0 !important;
+            }
+
+            .hamburger-box {
+                width: 30px !important;
+                height: 24px !important;
+                display: block !important;
+            }
+
+            .hamburger-inner,
+            .hamburger-inner::before,
+            .hamburger-inner::after {
+                background-color: #f3c227 !important;
+                width: 30px !important;
+                height: 3px !important;
+            }
+        }
     </style>
     <!-- end Simple Custom CSS and JS -->
     <!-- start Simple Custom CSS and JS -->
@@ -1221,6 +1309,7 @@
     </style>
 
 
+    <link rel="stylesheet" href="mobile-fix.css">
 </head>
 
 <body class="page-template-default page page-id-9498">
@@ -1542,15 +1631,15 @@
                     <div class="m-content__inner m-content__inner--normal">
                         <div class="grid-x grid-margin-x align-justify">
                             <div class="cell ">
-                                <form  id="partner-form"  class="popup-form" action="https://api.web3forms.com/submit"
+                                <form id="partner-form" class="popup-form" action="https://api.web3forms.com/submit"
                                     method="POST">
-                                    <input type="hidden" name="access_key"
-                                        value="a5b10f85-5046-49bb-805e-465fb9bc719b">
+                                    <input type="hidden" name="access_key" value="a5b10f85-5046-49bb-805e-465fb9bc719b">
                                     <input type="hidden" name="subject" value="New Partner Form Submission!">
                                     <input type="hidden" name="from_name" value="Us Tech Titans Website">
-    <input type="hidden" name="redirect" value="https://tech-topaz-six.vercel.app/success.html">
+                                    <input type="hidden" name="redirect"
+                                        value="https://tech-topaz-six.vercel.app/success.html">
 
-    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
 
                                     <div class="form-field">
@@ -1691,7 +1780,7 @@
                 </div>
             </div>
         </div>
-        <div  id="9506" class="grid-container site-footer__middle">
+        <div id="9506" class="grid-container site-footer__middle">
             <div class="grid-x grid-margin-x align-left">
 
 
@@ -1777,9 +1866,9 @@
                         </div>
                     </div>
 
-                   
 
-    <!-- <div class="popup-column">
+
+                    <!-- <div class="popup-column">
         Replaced iframe container with custom form
         <div class="popup-form-container">
             <form class="popup-form" action="https://formsubmit.co/ustechtitans1@gmail.com" method="POST">
@@ -1883,122 +1972,132 @@
     </div>
     </div>
 -->
-    <div class="popup-column">
-        <!-- Replaced iframe container with custom form -->
-        <div class="popup-form-container">
-            <form id="popup-project-form"   class="popup-form" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="a5b10f85-5046-49bb-805e-465fb9bc719b">
-                <input type="hidden" name="subject" value="New Form Submission!">
-                <input type="hidden" name="form_name" value="Us Tech Titans Website">
-    <input type="hidden" name="redirect" value="https://tech-topaz-six.vercel.app/success.html">
+                    <div class="popup-column">
+                        <!-- Replaced iframe container with custom form -->
+                        <div class="popup-form-container">
+                            <form id="popup-project-form" class="popup-form" action="https://api.web3forms.com/submit"
+                                method="POST">
+                                <input type="hidden" name="access_key" value="a5b10f85-5046-49bb-805e-465fb9bc719b">
+                                <input type="hidden" name="subject" value="New Form Submission!">
+                                <input type="hidden" name="form_name" value="Us Tech Titans Website">
+                                <input type="hidden" name="redirect"
+                                    value="https://tech-topaz-six.vercel.app/success.html">
 
 
-    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
 
-                <div class="form-field">
-                    <label>Are you a client with a project for Us Tech Titans? *</label>
-                    <select name="clientStatus" required>
-                        <option value="Yes! I'm a client and might want to hire Us Tech Titans. Please proceed.">Yes!
-                            I'm a client and might want to hire Us Tech Titans. Please proceed.</option>
-                        <option value="I'm an existing client">I'm an existing client</option>
-                        <option value="I'm a potential client">I'm a potential client</option>
-                    </select>
-                </div>
+                                <div class="form-field">
+                                    <label>Are you a client with a project for Us Tech Titans? *</label>
+                                    <select name="clientStatus" required>
+                                        <option
+                                            value="Yes! I'm a client and might want to hire Us Tech Titans. Please proceed.">
+                                            Yes!
+                                            I'm a client and might want to hire Us Tech Titans. Please proceed.</option>
+                                        <option value="I'm an existing client">I'm an existing client</option>
+                                        <option value="I'm a potential client">I'm a potential client</option>
+                                    </select>
+                                </div>
 
-                <div class="form-field">
-                    <label>Full Name *</label>
-                    <input type="text" name="fullName" placeholder="Full Name" required>
-                </div>
+                                <div class="form-field">
+                                    <label>Full Name *</label>
+                                    <input type="text" name="fullName" placeholder="Full Name" required>
+                                </div>
 
-                <div class="form-field">
-                    <label>Which service(s) are you interested in? *</label>
-                    <div class="checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="services[]" value="Website Design & Development">
-                            <span class="checkmark"></span>
-                            Website Design & Development
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="services[]" value="Website Support & Maintenance">
-                            <span class="checkmark"></span>
-                            Website Support & Maintenance
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="services[]" value="Website Hosting & Security">
-                            <span class="checkmark"></span>
-                            Website Hosting & Security
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="services[]" value="Website Accessibility (ADA Compliance)">
-                            <span class="checkmark"></span>
-                            Website Accessibility (ADA Compliance)
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="services[]" value="Website Copywriting">
-                            <span class="checkmark"></span>
-                            Website Copywriting
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="services[]"
-                                value="Digital Marketing (SEO, PPC, Social, Email, Etc.)">
-                            <span class="checkmark"></span>
-                            Digital Marketing (SEO, PPC, Social, Email, Etc.)
-                        </label>
+                                <div class="form-field">
+                                    <label>Which service(s) are you interested in? *</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="services[]"
+                                                value="Website Design & Development">
+                                            <span class="checkmark"></span>
+                                            Website Design & Development
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="services[]"
+                                                value="Website Support & Maintenance">
+                                            <span class="checkmark"></span>
+                                            Website Support & Maintenance
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="services[]" value="Website Hosting & Security">
+                                            <span class="checkmark"></span>
+                                            Website Hosting & Security
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="services[]"
+                                                value="Website Accessibility (ADA Compliance)">
+                                            <span class="checkmark"></span>
+                                            Website Accessibility (ADA Compliance)
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="services[]" value="Website Copywriting">
+                                            <span class="checkmark"></span>
+                                            Website Copywriting
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="services[]"
+                                                value="Digital Marketing (SEO, PPC, Social, Email, Etc.)">
+                                            <span class="checkmark"></span>
+                                            Digital Marketing (SEO, PPC, Social, Email, Etc.)
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-field">
+                                    <label>Business/Organization or Project Name *</label>
+                                    <input type="text" name="businessName" placeholder="Organization" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label>Phone (where can we text the appt confirmation?) *</label>
+                                    <input type="tel" name="phone" placeholder="Phone" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label>Email *</label>
+                                    <input type="email" name="email" placeholder="Email" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label class="checkbox-label consent-checkbox">
+                                        <input type="checkbox" name="marketingConsent">
+                                        <span class="checkmark"></span>
+                                        Check this box if you want to receive our marketing and 'how to' guides, website
+                                        trends and
+                                        other insights when we release them. You can also opt out at any time by
+                                        replying 'stop' or
+                                        reply 'help' for additional help. Message and data rates may apply.
+                                    </label>
+                                </div>
+
+                                <button type="submit" class="submit-button">Submit Form</button>
+
+                                <div class="form-footer">
+                                    <a href="#" class="footer-link">Terms & Conditions</a>
+                                    <span> | </span>
+                                    <a href="#" class="footer-link">Privacy Policy</a>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-
-                <div class="form-field">
-                    <label>Business/Organization or Project Name *</label>
-                    <input type="text" name="businessName" placeholder="Organization" required>
-                </div>
-
-                <div class="form-field">
-                    <label>Phone (where can we text the appt confirmation?) *</label>
-                    <input type="tel" name="phone" placeholder="Phone" required>
-                </div>
-
-                <div class="form-field">
-                    <label>Email *</label>
-                    <input type="email" name="email" placeholder="Email" required>
-                </div>
-
-                <div class="form-field">
-                    <label class="checkbox-label consent-checkbox">
-                        <input type="checkbox" name="marketingConsent">
-                        <span class="checkmark"></span>
-                        Check this box if you want to receive our marketing and 'how to' guides, website trends and
-                        other insights when we release them. You can also opt out at any time by replying 'stop' or
-                        reply 'help' for additional help. Message and data rates may apply.
-                    </label>
-                </div>
-
-                <button type="submit" class="submit-button">Submit Form</button>
-
-                <div class="form-footer">
-                    <a href="#" class="footer-link">Terms & Conditions</a>
-                    <span> | </span>
-                    <a href="#" class="footer-link">Privacy Policy</a>
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="popup-column">
-        <div class="popup-form-iframe-container"><iframe
-                src="https://api.leadconnectorhq.com/widget/form/0HpaMwzXOGu1mOHxTXz9"
-                style="width:100%;height:100%;border:none;border-radius:3px" id="inline-0HpaMwzXOGu1mOHxTXz9"
-                data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
-                data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate"
-                data-deactivation-value="" data-form-name="Client Work: Step 1 Form - Application" data-height="1298"
-                data-layout-iframe-id="inline-0HpaMwzXOGu1mOHxTXz9" data-form-id="0HpaMwzXOGu1mOHxTXz9"
-                title="Client Work: Step 1 Form - Application"><br />
-            </iframe></div>
-        <p>
-            <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-    </div>
+        <div class="popup-column">
+            <div class="popup-form-iframe-container"><iframe
+                    src="https://api.leadconnectorhq.com/widget/form/0HpaMwzXOGu1mOHxTXz9"
+                    style="width:100%;height:100%;border:none;border-radius:3px" id="inline-0HpaMwzXOGu1mOHxTXz9"
+                    data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
+                    data-activation-type="alwaysActivated" data-activation-value=""
+                    data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                    data-form-name="Client Work: Step 1 Form - Application" data-height="1298"
+                    data-layout-iframe-id="inline-0HpaMwzXOGu1mOHxTXz9" data-form-id="0HpaMwzXOGu1mOHxTXz9"
+                    title="Client Work: Step 1 Form - Application"><br />
+                </iframe></div>
+            <p>
+                <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        </div>
     </div>
     </div>
 
@@ -2562,85 +2661,85 @@ if('save'== data.type){
 
 
 
-<!-- DELETE the old script starting with "document.addEventListener('DOMContentLoaded'..." -->
-<!-- ADD this new script right before </body> -->
+    <!-- DELETE the old script starting with "document.addEventListener('DOMContentLoaded'..." -->
+    <!-- ADD this new script right before </body> -->
 
-<!-- Replace the existing script before </body> -->
+    <!-- Replace the existing script before </body> -->
 
-<!-- Replace the existing script before </body> -->
+    <!-- Replace the existing script before </body> -->
 
-// ...existing code...
+    // ...existing code...
 
-<!-- Replace the script before </body> -->
-// ...existing code...
+    <!-- Replace the script before </body> -->
+    // ...existing code...
 
-<!-- Replace the script before </body> -->
-<script>
-(function () {
-    'use strict';
+    <!-- Replace the script before </body> -->
+    <script>
+        (function () {
+            'use strict';
 
-    var SUCCESS_URL = 'https://tech-topaz-six.vercel.app/success.html';
+            var SUCCESS_URL = 'https://tech-topaz-six.vercel.app/success.html';
 
-    /**
-     * Handles the form submission using AJAX.
-     * @param {HTMLFormElement} form 
-     */
-    function handleFormSubmit(form) {
-        var btn = form.querySelector('button[type="submit"]');
-        if (btn) {
-            btn.disabled = true;
-            btn.dataset.originalText = btn.textContent;
-            btn.textContent = 'Submitting...';
-        }
+            /**
+             * Handles the form submission using AJAX.
+             * @param {HTMLFormElement} form 
+             */
+            function handleFormSubmit(form) {
+                var btn = form.querySelector('button[type="submit"]');
+                if (btn) {
+                    btn.disabled = true;
+                    btn.dataset.originalText = btn.textContent;
+                    btn.textContent = 'Submitting...';
+                }
 
-        var formData = new FormData(form);
-        var action = form.getAttribute('action');
+                var formData = new FormData(form);
+                var action = form.getAttribute('action');
 
-        fetch(action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
+                fetch(action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                    .then(function (response) {
+                        // Even if the response isn't 200, we'll try to redirect if the submission likely went through
+                        // Web3Forms and FormSubmit return 200 on success usually
+                        return response.json().catch(function () { return { success: response.ok }; });
+                    })
+                    .then(function (data) {
+                        // Most services return a 'success' boolean or redirect immediately
+                        // Since we are catching the 'redirect' parameter in our FETCH, we manually redirect here
+                        window.location.href = SUCCESS_URL;
+                    })
+                    .catch(function (error) {
+                        console.error('Submission error:', error);
+                        // Fallback: still redirect to success page as form data was likely sent
+                        window.location.href = SUCCESS_URL;
+                    });
             }
-        })
-        .then(function(response) {
-            // Even if the response isn't 200, we'll try to redirect if the submission likely went through
-            // Web3Forms and FormSubmit return 200 on success usually
-            return response.json().catch(function() { return { success: response.ok }; });
-        })
-        .then(function(data) {
-            // Most services return a 'success' boolean or redirect immediately
-            // Since we are catching the 'redirect' parameter in our FETCH, we manually redirect here
-            window.location.href = SUCCESS_URL;
-        })
-        .catch(function(error) {
-            console.error('Submission error:', error);
-            // Fallback: still redirect to success page as form data was likely sent
-            window.location.href = SUCCESS_URL;
-        });
-    }
 
-    // Use event delegation on the document to capture all form submissions
-    document.addEventListener('submit', function (e) {
-        var form = e.target;
-        
-        // Target specifically our popup forms or identified partner form
-        if (form && (form.classList.contains('popup-form') || form.id === 'partner-form' || form.id === 'popup-project-form')) {
-            // If it's the leadconnector iframe form, we don't handle it here (it's in an iframe)
-            if (form.getAttribute('action') && (form.getAttribute('action').includes('web3forms') || form.getAttribute('action').includes('formsubmit.co'))) {
-                e.preventDefault();
-                e.stopPropagation();
-                handleFormSubmit(form);
-            }
-        }
-    }, true);
+            // Use event delegation on the document to capture all form submissions
+            document.addEventListener('submit', function (e) {
+                var form = e.target;
 
-    console.log('Global form redirection handler initialized.');
-})();
-</script>
+                // Target specifically our popup forms or identified partner form
+                if (form && (form.classList.contains('popup-form') || form.id === 'partner-form' || form.id === 'popup-project-form')) {
+                    // If it's the leadconnector iframe form, we don't handle it here (it's in an iframe)
+                    if (form.getAttribute('action') && (form.getAttribute('action').includes('web3forms') || form.getAttribute('action').includes('formsubmit.co'))) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleFormSubmit(form);
+                    }
+                }
+            }, true);
 
-// ...existing code...
-// ...existing code...
+            console.log('Global form redirection handler initialized.');
+        })();
+    </script>
+
+    // ...existing code...
+    // ...existing code...
 
 
 
