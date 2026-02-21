@@ -1,3 +1,18 @@
+/* Global overflow fix to prevent white space/horizontal scrolling */
+html, body {
+    overflow-x: hidden !important;
+    position: relative;
+    width: 100%;
+}
+
+/* Ensure single card on mobile/tablet for WANT MORE PROOF section */
+@media screen and (max-width: 768px) {
+    .m-posts__carousel .slide {
+        width: 100% !important;
+        display: block !important;
+    }
+}
+
 @media screen and (max-width: 430px) {
 
     /* Fix the header to the top */
