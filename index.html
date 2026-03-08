@@ -62,7 +62,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://e9digital.com/wp-content/uploads/2021/02/e9digital1.png" />
     <script type="application/ld+json"
-        class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://e9digital.com/","url":"https://e9digital.com/","name":"e9digital: Leading Web Design Agency in NYC","isPartOf":{"@id":"https://e9digital.com/#website"},"primaryImageOfPage":{"@id":"https://e9digital.com/#primaryimage"},"image":{"@id":"https://e9digital.com/#primaryimage"},"thumbnailUrl":"https://e9digital.com/wp-content/uploads/2020/02/zamaze.png","datePublished":"2020-02-18T03:42:46+00:00","dateModified":"2025-05-27T16:06:12+00:00","description":"e9digital, a NYC web design agency, creates engaging websites through disruptive design, inspirational branding, & an intuitive user experience.","breadcrumb":{"@id":"https://e9digital.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://e9digital.com/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://e9digital.com/#primaryimage","url":"https://e9digital.com/wp-content/uploads/2020/02/zamaze.png","contentUrl":"https://e9digital.com/wp-content/uploads/2020/02/zamaze.png","width":1600,"height":938,"caption":"web design agency ny"},{"@type":"BreadcrumbList","@id":"https://e9digital.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://e9digital.com/#website","url":"https://e9digital.com/","name":"e9digital","description":"We build websites that build businesses!","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://e9digital.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+        class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://e9digital.com/","url":"https://e9digital.com/","name":"e9digital: Leading Web Design Agency in NYC","isPartOf":{"@id":"https://e9digital.com/#website"},"primaryImageOfPage":{"@id":"https://e9digital.com/#primaryimage"},"image":{"@id":"https://e9digital.com/#primaryimage"},"thumbnailUrl":"https://e9digital.com/wp-content/uploads/2020/02/web-design.jpg","datePublished":"2020-02-18T03:42:46+00:00","dateModified":"2025-05-27T16:06:12+00:00","description":"e9digital, a NYC web design agency, creates engaging websites through disruptive design, inspirational branding, & an intuitive user experience.","breadcrumb":{"@id":"https://e9digital.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://e9digital.com/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://e9digital.com/#primaryimage","url":"https://e9digital.com/wp-content/uploads/2020/02/web-design.jpg","contentUrl":"https://e9digital.com/wp-content/uploads/2020/02/web-design.jpg","width":1600,"height":938,"caption":"web design agency ny"},{"@type":"BreadcrumbList","@id":"https://e9digital.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://e9digital.com/#website","url":"https://e9digital.com/","name":"e9digital","description":"We build websites that build businesses!","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://e9digital.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
     <!-- / Yoast SEO plugin. -->
 
 
@@ -85,9 +85,87 @@
             max-width: 100%;
             width: 100%
         }
+        
     </style>
     <style id='classic-theme-styles-inline-css' type='text/css'>
         /*! This file is auto-generated */
+/* ...existing code... */
+
+/* ============================================
+   ACCORDION IMAGES SIZE FIX
+   ============================================ */
+
+/* Desktop accordion images - proper sizing */
+.m-accordion__images {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.m-accordion__images__inner {
+    max-width: 100%;
+}
+
+.m-accordion__image {
+    max-width: 100%;
+    position: relative;
+}
+
+.m-accordion__image img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 500px; /* Limit height */
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Mobile tooltip images */
+.m-tooltip-image--mobile img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 1000px;
+    object-fit: contain;
+}
+
+
+
+/* Responsive sizing */
+@media screen and (min-width: 1024px) {
+    .m-accordion__image img {
+        max-height: 1000px;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .m-accordion__image img {
+        max-height: 1000px;
+        z-index:0
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .m-accordion__image img {
+        max-height: 700px;
+         z-index:0
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .m-tooltip-image--mobile img {
+        max-height: 600px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .m-tooltip-image--mobile img {
+        max-height: 250px;
+    }
+}
+
+
         .wp-block-button__link {
             color: #fff;
             background-color: #32373c;
@@ -103,6 +181,8 @@
             color: #fff;
             text-decoration: none
         }
+
+        
     </style>
     <style id='global-styles-inline-css' type='text/css'>
         :root {
@@ -770,7 +850,16 @@
                 border: 0;
             }
         }
+    
+
+
+
+
+
+        
+
     </style>
+   <!-- ya ha  -->
     <!-- end Simple Custom CSS and JS -->
     <!-- start Simple Custom CSS and JS -->
     <style type="text/css">
@@ -1031,10 +1120,10 @@
     <meta property="og:title" content="Home">
     <meta property="og:url" content="https://e9digital.com/">
     <meta property="og:description" content="Visit the post for more.">
-    <meta property="og:image" content="https://e9digital.com/wp-content/uploads/2020/02/zamaze.png">
+    <meta property="og:image" content="https://e9digital.com/wp-content/uploads/2020/02/web-design.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="704">
-    <meta name="twitter:image" content="https://e9digital.com/wp-content/uploads/2020/02/zamaze.png">
+    <meta name="twitter:image" content="https://e9digital.com/wp-content/uploads/2020/02/web-design.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <!-- / Jetpack Social -->
     <script type="application/ld+json">
@@ -1042,7 +1131,7 @@
   "@context": "https://schema.org/", 
   "@type": "Product", 
   "name": "Web Design Services",
-  "image": "https://e9digital.com/wp-content/uploads/2020/12/zamaze.png",
+  "image": "https://e9digital.com/wp-content/uploads/2020/12/web-design.jpg",
   "description": "Keeping eyeballs focused on your site through disruptive design, intelligent strategy and well-seasoned with an intuitive user experience.",
   "brand": {
     "@type": "Brand",
@@ -1138,6 +1227,11 @@
             padding: 0 !important;
             margin: 0 !important;
         }
+
+
+
+
+        
     </style>
     <style type="text/css" id="wp-custom-css">
         .m-button--scroll i svg path {
@@ -1246,8 +1340,8 @@
 
 
     <header class="site-header" role="banner">
-        <div class="site-header__col site-header__col--logo">
-            <a href="index.html@p=2839.html" class="logo">
+       <div class="site-header__col site-header__col--logo">
+            <a href="index.html" class="logo">
                 <?xml version="1.0" encoding="UTF-8"?>
                 <img src="./wp-content/images/us_tech_logo-removebg-preview.png" alt="">
             </a>
@@ -1478,10 +1572,10 @@
                                         <div class="grid-x grid-margin-x align-justify m-accordion__item active"
                                             data-num="1">
                                             <div class="cell medium-8 large-12 m-tooltip-image m-tooltip-image--mobile">
-                                                <img class="invisible " width="1600" height="938"
-                                                    data-srcset="https://e9digital.com/wp-content/uploads/2020/12/zamaze-768x450.png 768w, https://e9digital.com/wp-content/uploads/2020/12/zamaze-1536x900.png 1536w, https://e9digital.com/wp-content/uploads/2020/12/zamaze.png 1600w"
-                                                    data-src="https://e9digital.com/wp-content/uploads/2020/12/zamaze.png"
-                                                    alt="" />
+                                               <img class="invisible" width="1600" height="938"
+    src="wp-content/uploads/2020/12/web-design.jpeg"
+    data-src="wp-content/uploads/2020/12/web-design.jpeg"
+    alt="yes" />
                                                 <div class="m-tooltip m-tooltip--mobile"
                                                     data-tooltip-content="#m-tooltip-content-1d2ZLTApC2-1-1"
                                                     style="left: 20%; top: 20%;"></div>
@@ -1509,9 +1603,11 @@
                                         <div class="grid-x grid-margin-x align-justify m-accordion__item " data-num="2">
                                             <div class="cell medium-8 large-12 m-tooltip-image m-tooltip-image--mobile">
                                                 <!-- holborn -->
-                                                <!-- <img class="invisible " width="1482" height="907" data-srcset=""
-                                                    data-src="https://e9digital.com/wp-content/uploads/2020/04/holborn-animated-logo-home-resized2.gif"
-                                                    alt="" /> -->
+                                                  <img class="" width="1482" height="907"
+            src="wp-content/uploads/2020/04/branding.jpeg"
+            data-srcset="wp-content/uploads/2020/04/branding.jpeg 768w, wp-content/uploads/2020/04/branding.jpeg 1482w"
+            data-src="wp-content/uploads/2020/04/branding.jpeg"
+            alt="Branding" />
                                                 <div class="m-tooltip m-tooltip--mobile"
                                                     data-tooltip-content="#m-tooltip-content-1d2ZLTApC2-2-1"
                                                     style="left: 30%; top: 55%;"></div>
@@ -1532,10 +1628,11 @@
                                         </div>
                                         <div class="grid-x grid-margin-x align-justify m-accordion__item " data-num="3">
                                             <div class="cell medium-8 large-12 m-tooltip-image m-tooltip-image--mobile">
-                                                <img class="invisible " width="1536" height="948"
-                                                    data-srcset="https://e9digital.com/wp-content/uploads/2020/12/e9-web-development-nyc-2-1536x948-1-768x474.png 768w, https://e9digital.com/wp-content/uploads/2020/12/e9-web-development-nyc-2-1536x948-1.png 1536w"
-                                                    data-src="https://e9digital.com/wp-content/uploads/2020/12/e9-web-development-nyc-2-1536x948-1.png"
-                                                    alt="" />
+                                                 <img class="" width="1536" height="948"
+            src="wp-content/uploads/2020/12/dev.jpeg"
+            data-srcset="wp-content/uploads/2020/12/dev.jpeg 768w, wp-content/uploads/2020/12/dev.jpeg 1536w"
+            data-src="wp-content/uploads/2020/12/dev.jpeg"
+            alt="Web Development" />
                                                 <div class="m-tooltip m-tooltip--mobile"
                                                     data-tooltip-content="#m-tooltip-content-1d2ZLTApC2-3-1"
                                                     style="left: 25%; top: 60%;"></div>
@@ -1557,13 +1654,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="m-accordion__images">
-                                <div class="m-accordion__images__inner">
-                                    <div class="m-accordion__image m-tooltip-image active" data-num="1">
-                                        <img class="invisible " width="1600" height="938"
-                                            data-srcset="https://e9digital.com/wp-content/uploads/2020/12/zamaze-768x450.png 768w, https://e9digital.com/wp-content/uploads/2020/12/zamaze-1536x900.png 1536w, https://e9digital.com/wp-content/uploads/2020/12/zamaze.png 1600w"
-                                            data-src="https://e9digital.com/wp-content/uploads/2020/12/zamaze.png"
-                                            alt="" />
+                           <div class="m-accordion__images">
+    <div class="m-accordion__images__inner">
+        <div class="m-accordion__image m-tooltip-image active" data-num="1">
+            <img class="" width="1000" height="100"
+                src="wp-content/uploads/2020/12/web-design.jpeg"
+                data-srcset="wp-content/uploads/2020/12/web-design.jpeg 768w, wp-content/uploads/2020/12/web-design.jpeg 156w, wp-content/uploads/2020/12/web-design.jpeg 1600w"
+                data-src="wp-content/uploads/2020/12/web-design.jpeg"
+                alt="Web Design" />
                                         <div class="m-tooltip m-tooltip--desktop m-tooltip--down"
                                             style="left: 20%; top: 20%;">
                                             <div class="m-tooltip__box">
@@ -1606,11 +1704,12 @@
                                             <div class="m-tooltip__line"></div>
                                         </div>
                                     </div>
-                                    <div class="m-accordion__image m-tooltip-image " data-num="2">
+                                    <div class="m-accordion__image m-tooltip-image "  data-num="2">
                                         <!-- holborn -->
-                                        <!-- <img class="invisible " width="1482" height="907" data-srcset=""
-                                            data-src="https://e9digital.com/wp-content/uploads/2020/04/holborn-animated-logo-home-resized2.gif"
-                                            alt="" /> -->
+                                        <img class=" " width="1482" height="907" data-srcset="" style="display: block  !important ; visibility: visible !important;opacity: 1 !important; max-width: 100% Im !important; "
+                                            data-src="https://e9digital.com/wp-content/uploads/2020/04/branding.jpeg"
+                                            src="wp-content/uploads/2020/04/branding.jpeg"
+                                            alt="" />
                                         <div class="m-tooltip m-tooltip--desktop m-tooltip--down"
                                             style="left: 30%; top: 55%;">
                                             <div class="m-tooltip__box">
@@ -1626,10 +1725,11 @@
                                         </div>
                                     </div>
                                     <div class="m-accordion__image m-tooltip-image " data-num="3">
-                                        <img class="invisible " width="1536" height="948"
-                                            data-srcset="https://e9digital.com/wp-content/uploads/2020/12/e9-web-development-nyc-2-1536x948-1-768x474.png 768w, https://e9digital.com/wp-content/uploads/2020/12/e9-web-development-nyc-2-1536x948-1.png 1536w"
-                                            data-src="https://e9digital.com/wp-content/uploads/2020/12/e9-web-development-nyc-2-1536x948-1.png"
-                                            alt="" />
+                                           <img class="" width="1536" height="948"
+        src="wp-content/uploads/2020/12/dev.jpeg"
+        data-srcset="wp-content/uploads/2020/12/dev.jpeg 768w, wp-content/uploads/2020/12/dev.jpeg 1536w"
+        data-src="wp-content/uploads/2020/12/dev.jpeg"
+        alt="Web Development" />
                                         <div class="m-tooltip m-tooltip--desktop m-tooltip--down"
                                             style="left: 25%; top: 60%;">
                                             <div class="m-tooltip__box">
@@ -2517,11 +2617,11 @@
                                             alt="" />
                                     </div>
                                 </div>
-                                <div class="cell medium-4 m-case-study__content-col animate" data-animation="fadeInUp">
+                                 <div class="cell medium-4 m-case-study__content-col animate" data-animation="fadeInUp">
                                     <h3><a class="black" href="index.html@p=646.html">Smith Design:</a></h3>
                                     <h5>Designing for Designers</h5>
 
-                                </div>
+                                </div> 
                             </div>
                         </div>
                     </div>
@@ -3052,7 +3152,7 @@
                             </g>
                         </svg></div>
                 </div>
-                <div class="m-component m-component--1 m-split-callout">
+                <!-- <div class="m-component m-component--1 m-split-callout">
                     <div class="grid-container">
                         <div class="grid-x grid-margin-x align-justify">
                             <div class="cell medium-6 animate" data-animation="fadeInUp">
@@ -3074,18 +3174,18 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
     </div><!-- end content -->
 
 
-    <footer class="site-footer above p-t--md p-b--sm" role="contentinfo">
+     <footer class="site-footer above p-t--md p-b--sm" role="contentinfo">
         <!-- svg class="m-border m-border--top m-border--quote" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 89"><polygon points="720 55.5 674.95 52.28 681.5 81.5 618.1 48.21 0 4 0 89 720 89 720 55.5"/></svg -->
         <div class="grid-container site-footer__top">
             <div class="grid-x grid-margin-x align-justify">
                 <div class="cell grid-x grid-margin-x align-justify">
-                    <a href="index.html@p=2839.html" class="logo"
+                    <a href="index.html" class="logo"
                         style="background-image: url(wp-content/images/us_tech_logo-removebg-preview.png);">Us Tech
                         Titans</a>
                 </div>
@@ -3094,7 +3194,7 @@
         <div class="grid-container site-footer__middle">
             <div class="grid-x grid-margin-x align-left">
                 <div class="cell">
-                    <a class="site-footer__heading" href="services.1.html">Services</a>
+                      <a class="site-footer__heading" href="services.html">Services</a>
                 </div>
             </div>
             <div class="grid-x grid-margin-x align-left">
@@ -3176,26 +3276,22 @@
                 <div class="site-footer__col site-footer__col--1-5">
                     <a class="site-footer__heading" href="contact.html">Contact</a>
                     <ul id="nav-footer-contact" class="nav-footer nav group">
-                        <li id="menu-item-9525"
-                            class="open-project-form-popup menu-item menu-item-type-custom menu-item-object-custom menu-item-9525">
+                         <li id="menu-item-9525"
+                            class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-9525">
                             <a>Let&#8217;s Talk</a>
                         </li>
+
                     </ul>
                     <address> <span>456 E Eisenhower Pkwy Suite 300,
                             Ann Arbor, MI 48108, USA</span><br /> </address>
                     <div class="social">
-                        <ul class="social-icons">
-                            <li class="si-twitter"><a href="https://twitter.com/e9digital" target="_blank">Twitter</a>
-                            </li>
-                            <li class="si-facebook"><a href="https://www.facebook.com/e9digital"
-                                    target="_blank">Facebook</a></li>
-                            <li class="si-linkedin"><a href="https://www.linkedin.com/company/e9-digital"
-                                    target="_blank">LinkedIn</a></li>
-                            <li class="si-instagram"><a href="https://www.instagram.com/e9digital/"
-                                    target="_blank">Instagram</a></li>
-                            <li class="si-pinterest"><a href="https://www.pinterest.com/e9nyc/e9digital-clients"
-                                    target="_blank">Pinterest</a></li>
-                        </ul>
+                      <ul class="social-icons">
+    <li class="si-twitter"><a href="javascript:void(0)">Twitter</a></li>
+    <li class="si-facebook"><a href="javascript:void(0)">Facebook</a></li>
+    <li class="si-linkedin"><a href="javascript:void(0)">LinkedIn</a></li>
+    <li class="si-instagram"><a href="javascript:void(0)">Instagram</a></li>
+    <li class="si-pinterest"><a href="javascript:void(0)">Pinterest</a></li>
+</ul>
                     </div>
                 </div>
 
@@ -3790,7 +3886,6 @@
             console.log('Global form redirection handler initialized.');
         })();
     </script>
-
     <script>
         jQuery(document).ready(function ($) {
 

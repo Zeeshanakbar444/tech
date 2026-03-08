@@ -35,8 +35,8 @@ def replace_footer(folder_path, new_footer):
 folder_path = r"c:\Users\Administrator\Downloads\us\us tech updated (1)"  # Fixed path
 
 new_footer = """<header class="site-header" role="banner">
-        <div class="site-header__col site-header__col--logo">
-            <a href="index.html@p=2839.html" class="logo">
+       <div class="site-header__col site-header__col--logo">
+            <a href="index.html" class="logo">
                 <?xml version="1.0" encoding="UTF-8"?>
                 <img src="./wp-content/images/us_tech_logo-removebg-preview.png" alt="">
             </a>
