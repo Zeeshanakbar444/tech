@@ -132,3 +132,41 @@ html, body {
         /* Restore pointer events */
     }
 }
+/* ...existing code... */
+
+/* ============================================
+   FIX ACCORDION IMAGES - SHOW ACTIVE ONLY
+   ============================================ */
+
+/* Desktop: Hide all accordion images by default */
+@media screen and (min-width: 1024px) {
+    
+    .m-accordion__images {
+        display: block !important;
+        visibility: visible !important;
+    }
+    
+    .m-accordion__images__inner {
+        display: block !important;
+    }
+    
+    /* Hide all accordion images */
+    .m-accordion__image {
+        display: none !important;
+    }
+    
+    /* Show only active accordion image */
+    .m-accordion__image.active {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .m-accordion__image.active img {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        max-width: 100%;
+        height: auto;
+    }
+}
