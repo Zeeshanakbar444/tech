@@ -16652,6 +16652,9 @@ screen and (max-width:63.99875em) {
 .mega-menu__list {
     padding: 0 0 .9375rem
 }
+/* .mega-menu__list li a  {
+    text-transform:capitalize;
+} */
 
 @media print,
 screen and (max-width:63.99875em) {
