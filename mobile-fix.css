@@ -137,22 +137,29 @@ body {
 /* ...existing code... */
 
 /* ============================================
-   FIX FOR LOWERCASE DISPLAY ISSUE
-   Force navigational links and headings to respect HTML casing
+   FIX FOR GLOBAL LINK AND HEADING CASING
+   Force all links and critical headings to respect HTML casing
    ============================================ */
 
-.mega-menu__list li a,
-.site-footer .nav-footer li a,
-.nav-main a,
-.nav-main .nav__sub-menu a,
+a,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .m-icon-title,
 .mega-menu__heading,
 .mega-menu__mobile-heading,
 .site-footer__subheading,
-.m-hero__content h1,
-.m-intro h2,
-.yellow.m-icon-title,
 .e9name,
-.m-process-steps__related__list li a {
+.teal,
+.yellow {
     text-transform: none !important;
 }
